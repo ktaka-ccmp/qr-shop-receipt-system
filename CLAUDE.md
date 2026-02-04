@@ -95,7 +95,7 @@ User QR:  https://receipt.example.com/user/{one_time_token}
 
 ## Patent Constraints (Critical)
 
-> **Detailed Documentation:** See `patents/README.md` for entry point, `patents/summary.md` for full analysis
+> **Detailed Documentation:** See `patents/README.md` for entry point, `patents/fto/summary.md` for FTO analysis, `patents/ip-strategy/` for patenting plans
 
 ### High-Risk Patents (Must Avoid)
 
@@ -145,10 +145,13 @@ User QR:  https://receipt.example.com/user/{one_time_token}
 ### Reference Documents
 
 - `patents/README.md` - Entry point and reading guide
-- `patents/summary.md` - Complete investigation summary
-- `patents/avoidance-checklist.md` - Detailed avoidance checklist
-- `patents/expiry-timeline.md` - Patent expiration timeline
-- `patents/reports/` - Individual investigation reports (8 files)
+- `patents/fto/` - Freedom to Operate (infringement avoidance)
+  - `summary.md` - Complete investigation summary
+  - `avoidance-checklist.md` - Detailed avoidance checklist
+  - `expiry-timeline.md` - Patent expiration timeline
+  - `reports/` - Individual investigation reports (8 files)
+- `patents/ip-strategy/` - Own IP protection (patenting)
+  - `invention-candidates.md` - Patentable invention candidates
 
 ## Development Phases
 

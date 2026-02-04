@@ -1,80 +1,6 @@
-# 特許調査ドキュメント
+# 特許関連ドキュメント
 
 **最終更新:** 2026年2月5日
-
----
-
-## 読み方ガイド
-
-### まず読むべきドキュメント
-
-| 順番 | ファイル | 内容 | 対象読者 |
-|------|---------|------|---------|
-| **1** | [summary.md](summary.md) | 調査結果の総合サマリー | 全員 |
-| **2** | [avoidance-checklist.md](avoidance-checklist.md) | 実装禁止事項のチェックリスト | 開発者 |
-| **3** | [expiry-timeline.md](expiry-timeline.md) | 特許有効期限一覧 | 経営・法務 |
-
-### 詳細レポート（必要に応じて参照）
-
-| ファイル | 内容 |
-|---------|------|
-| [reports/toshiba-tec.md](reports/toshiba-tec.md) | 東芝テック特許（最重要） |
-| [reports/freee.md](reports/freee.md) | freee特許（勘定科目自動判定） |
-| [reports/pos-vendors.md](reports/pos-vendors.md) | POSレジベンダー（Airレジ、スマレジ、Square） |
-| [reports/qrcode.md](reports/qrcode.md) | QRコード関連技術 |
-| [reports/e-bookkeeping.md](reports/e-bookkeeping.md) | 電子帳簿保存法関連 |
-| [reports/hitachi.md](reports/hitachi.md) | 日立グループ |
-| [reports/citation-network.md](reports/citation-network.md) | 引用特許ネットワーク |
-| [reports/prior-art-non-patent.md](reports/prior-art-non-patent.md) | 公知例（非特許DB） |
-
-### アーカイブ（過去の調査資料）
-
-[archive/](archive/) ディレクトリには、調査過程で作成された古いバージョンのドキュメントを保管しています。正式な参照先ではありませんが、調査の経緯を確認する際に参照してください。
-
----
-
-## 調査結論サマリー
-
-### 回避必須の機能（実装禁止）
-
-| 機能 | 関連特許 | 有効期限 |
-|------|---------|---------|
-| ハイライト表示（色・背景変更） | 東芝テック 6598936 | 2034年頃 |
-| 返品連動の自動訂正レシート | 東芝テック 6618585 | 2033年頃 |
-| キーワード対応テーブルによる勘定科目自動判定 | freee 5503795 | 2033年頃 |
-
-### 安全に実装可能な機能
-
-- 電子領収書の発行・保存・配信
-- QRコードによる店舗-利用者連携
-- タイムスタンプ付与（RFC3161準拠）
-- 訂正削除履歴管理
-- PDF/CSVエクスポート
-- 会計ソフト連携（勘定科目判定は会計ソフト側）
-
-### 調査未完了（要追加調査）
-
-- Airレジ/スマレジの特許（J-PlatPat詳細調査必要）
-- Square/Blockの米国特許（USPTO調査必要）
-
----
-
-## 重要な注意事項
-
-### 有効期限について
-
-本調査で記載している有効期限は**推定値**です。正確な有効期限はJ-PlatPatで確認してください。
-
-特に、東芝テック特許6598936については：
-- 出願日: 2018年7月5日
-- 優先権日: 2014年6月9日（報告書記載の2034年はこれを基準にした可能性）
-- 正確な有効期限は要確認
-
-### 本調査の限界
-
-1. Web検索ベースの予備調査であり、J-PlatPat等での網羅的検索は一部未実施
-2. 法的助言ではありません。最終判断は弁理士・弁護士に相談してください
-3. 特許情報は変更される可能性があります
 
 ---
 
@@ -83,30 +9,97 @@
 ```
 patents/
 ├── README.md              # このファイル（エントリーポイント）
-├── summary.md             # 調査結果サマリー
-├── avoidance-checklist.md # 回避チェックリスト
-├── expiry-timeline.md     # 有効期限一覧
-├── reports/               # 詳細調査レポート
-│   ├── toshiba-tec.md
-│   ├── freee.md
-│   ├── pos-vendors.md
-│   ├── qrcode.md
-│   ├── e-bookkeeping.md
-│   ├── hitachi.md
-│   ├── citation-network.md
-│   └── prior-art-non-patent.md
+│
+├── fto/                   # Freedom to Operate（侵害回避）
+│   ├── README.md          # FTO調査の概要
+│   ├── summary.md         # 調査結果サマリー
+│   ├── avoidance-checklist.md  # 回避チェックリスト
+│   ├── expiry-timeline.md # 有効期限一覧
+│   └── reports/           # 詳細調査レポート（8件）
+│
+├── ip-strategy/           # 自社IP戦略（権利化）
+│   ├── README.md          # IP戦略の概要
+│   ├── invention-candidates.md  # 発明候補一覧
+│   └── prior-art-searches/      # 新規性調査（未着手）
+│
 └── archive/               # 過去の調査資料（参考用）
-    ├── patent-analysis-revised.md
-    ├── patent-investigation-plan.md
-    └── ...
 ```
 
 ---
 
-## 更新履歴
+## 読み方ガイド
 
-| 日付 | 内容 |
-|------|------|
-| 2026-02-05 | ディレクトリ構成を整理、README.md作成 |
-| 2026-02-04 | 8件の詳細調査レポート完成 |
-| 2026-02-03 | 特許調査開始 |
+### 目的別
+
+| 目的 | 参照先 |
+|------|--------|
+| **他社特許を侵害しないための確認** | [fto/README.md](fto/README.md) |
+| **自社発明の特許出願検討** | [ip-strategy/README.md](ip-strategy/README.md) |
+
+---
+
+## FTO（Freedom to Operate）サマリー
+
+### 回避必須の機能
+
+| 機能 | 関連特許 | 有効期限 |
+|------|---------|---------|
+| ハイライト表示（色・背景変更） | 東芝テック 6598936 | 2034年頃* |
+| 返品連動の自動訂正レシート | 東芝テック 6618585 | 2033年頃* |
+| キーワード対応テーブルによる勘定科目自動判定 | freee 5503795 | 2033年頃 |
+
+*有効期限はJ-PlatPatで要確認
+
+### 安全に実装可能
+
+- 電子領収書の発行・保存・配信
+- QRコードによる店舗-利用者連携
+- タイムスタンプ付与（RFC3161準拠）
+- 訂正削除履歴管理
+- PDF/CSVエクスポート
+
+詳細: [fto/avoidance-checklist.md](fto/avoidance-checklist.md)
+
+---
+
+## IP戦略サマリー
+
+### 発明候補
+
+| # | 発明候補 | 推奨度 |
+|---|---------|--------|
+| **A** | 経費精算特化電子領収書発行システム | ★★★★★ |
+| **B** | 店舗発行時点での勘定科目自動付与 | ★★★★★ |
+| **C** | 店舗・利用者双方の電帳法対応保管 | ★★★★☆ |
+
+### 最大の差別化ポイント
+
+> **東芝テック スマートレシート FAQ:**
+> 「領収書については電子化はされず、今まで通り紙で出力されます」
+
+→ 本システム（電子**領収書**）はスマートレシート（電子**レシート**）と別市場
+
+詳細: [ip-strategy/invention-candidates.md](ip-strategy/invention-candidates.md)
+
+---
+
+## 推奨アクション
+
+### 開発者向け
+
+1. [fto/avoidance-checklist.md](fto/avoidance-checklist.md) を確認
+2. 実装禁止事項に該当しないことを確認してから開発
+
+### 経営・法務向け
+
+1. [fto/summary.md](fto/summary.md) でリスク概要を把握
+2. [ip-strategy/README.md](ip-strategy/README.md) で出願計画を確認
+3. 弁理士への相談を手配
+
+---
+
+## 注意事項
+
+- 本調査はWeb検索ベースの予備調査です
+- 正式な特許調査・鑑定は弁理士に依頼してください
+- **出願検討中の発明内容を外部に公開しないでください**（新規性喪失）
