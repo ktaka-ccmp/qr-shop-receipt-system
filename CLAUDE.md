@@ -95,23 +95,57 @@ User QR:  https://receipt.example.com/user/{one_time_token}
 
 ## Patent Constraints (Critical)
 
+> **Detailed Documentation:** See `patents/patent-landscape-summary.md` for full analysis
+
+### High-Risk Patents (Must Avoid)
+
+| Patent | Owner | Expiry | Risk |
+|--------|-------|--------|------|
+| 6598936 | Toshiba Tec | 2034/09 | Highlight display |
+| 6618585 | Toshiba Tec | 2033/09 | Return-linked receipts |
+| 5503795 | freee | 2033/11 | Keyword-based auto-classification |
+
 ### DO (Safe to Implement)
 
 - Electronic receipt storage and distribution
-- Uniform display of transaction details
-- Receipt download/printing
-- Data export to accounting systems
+- Uniform display of transaction details (no highlighting)
+- Receipt download/printing (PDF/CSV)
+- Data export to accounting systems (without auto-classification)
+- QR code generation/reading (basic patents expired)
+- RFC3161-compliant timestamps (open standard)
+- Correction/deletion history (standard DB design)
+- Store QR display → User reads (MPM pattern)
 
 ### DON'T (Avoid These Features)
 
-- Highlighting specific items with color/background changes (Toshiba Tec Patent 6598936)
-- Point functionality (especially expiration management with highlighting)
-- Automated account classification via keyword matching tables (freee Patent 5503795)
+- **Highlight display** - Any color/background changes for specific items (Toshiba Tec 6598936)
+- **Point expiry highlighting** - Visual emphasis on expiring points (Toshiba Tec 6598936)
+- **Keyword matching tables** - Auto account classification via keyword-to-account tables (freee 5503795)
+- **Return-linked auto-correction** - Auto-generate corrected receipts on return (Toshiba Tec 6618585)
+- **User QR → Store reads** - Consumer-Presented Mode (CPM) may have patent implications
 
 ### CAUTION (Requires Attorney Review)
 
-- "User displays QR → Store reads" flow may have patent implications
-- Airレジ/Smaregi patent landscape unclear
+- Machine learning for account suggestion (likely safe per freee vs MoneyForward ruling)
+- Account suggestion UI (user must confirm, not auto-assign)
+- Airレジ/Smaregi patent landscape requires J-PlatPat investigation
+- Square/Block US patents require USPTO investigation
+
+### Patent-Safe Alternatives
+
+| Risky Feature | Safe Alternative |
+|--------------|-----------------|
+| Auto account classification | Export without account field; let accounting software classify |
+| Keyword matching | Machine learning inference (non-infringing per court ruling) |
+| Highlight display | Uniform text display for all items |
+| User QR → Store reads | Store QR → User reads (MPM pattern) |
+
+### Reference Documents
+
+- `patents/patent-landscape-summary.md` - Complete investigation summary
+- `patents/implementation-avoidance.md` - Detailed avoidance checklist
+- `patents/patent-expiry-list.md` - Patent expiration timeline
+- `patents/report-*.md` - Individual investigation reports
 
 ## Development Phases
 
