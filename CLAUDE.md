@@ -25,7 +25,7 @@ This Service → POS Vendors → Stores → End Users
 - `docs/PROJECT-HANDOFF.md` - Complete project context and handoff document
 - `business/receipt-system-idea.md` - Business concept and feature specification
 - `business/receipt-system-business-plan.md` - Market analysis and financials
-- `patents/patent-analysis-revised.md` - Patent infringement risk analysis
+- `patents/README.md` - Patent investigation entry point (start here)
 
 ## Planned Technology Stack
 
@@ -95,15 +95,17 @@ User QR:  https://receipt.example.com/user/{one_time_token}
 
 ## Patent Constraints (Critical)
 
-> **Detailed Documentation:** See `patents/patent-landscape-summary.md` for full analysis
+> **Detailed Documentation:** See `patents/README.md` for entry point, `patents/summary.md` for full analysis
 
 ### High-Risk Patents (Must Avoid)
 
 | Patent | Owner | Expiry | Risk |
 |--------|-------|--------|------|
-| 6598936 | Toshiba Tec | 2034/09 | Highlight display |
-| 6618585 | Toshiba Tec | 2033/09 | Return-linked receipts |
+| 6598936 | Toshiba Tec | 2034/09* | Highlight display |
+| 6618585 | Toshiba Tec | 2033/09* | Return-linked receipts |
 | 5503795 | freee | 2033/11 | Keyword-based auto-classification |
+
+*Note: Expiry dates require verification at J-PlatPat. These may be divisional applications with different calculation bases.
 
 ### DO (Safe to Implement)
 
@@ -115,6 +117,7 @@ User QR:  https://receipt.example.com/user/{one_time_token}
 - RFC3161-compliant timestamps (open standard)
 - Correction/deletion history (standard DB design)
 - Store QR display → User reads (MPM pattern)
+- User QR display → Store reads (CPM pattern) - see CAUTION note
 
 ### DON'T (Avoid These Features)
 
@@ -122,12 +125,12 @@ User QR:  https://receipt.example.com/user/{one_time_token}
 - **Point expiry highlighting** - Visual emphasis on expiring points (Toshiba Tec 6598936)
 - **Keyword matching tables** - Auto account classification via keyword-to-account tables (freee 5503795)
 - **Return-linked auto-correction** - Auto-generate corrected receipts on return (Toshiba Tec 6618585)
-- **User QR → Store reads** - Consumer-Presented Mode (CPM) may have patent implications
 
 ### CAUTION (Requires Attorney Review)
 
 - Machine learning for account suggestion (likely safe per freee vs MoneyForward ruling)
 - Account suggestion UI (user must confirm, not auto-assign)
+- CPM pattern (User QR → Store reads) - Toshiba Tec patent 6598936 is NOT about QR flow (its core is highlight display), but Airレジ/Smaregi may have related patents
 - Airレジ/Smaregi patent landscape requires J-PlatPat investigation
 - Square/Block US patents require USPTO investigation
 
@@ -138,14 +141,14 @@ User QR:  https://receipt.example.com/user/{one_time_token}
 | Auto account classification | Export without account field; let accounting software classify |
 | Keyword matching | Machine learning inference (non-infringing per court ruling) |
 | Highlight display | Uniform text display for all items |
-| User QR → Store reads | Store QR → User reads (MPM pattern) |
 
 ### Reference Documents
 
-- `patents/patent-landscape-summary.md` - Complete investigation summary
-- `patents/implementation-avoidance.md` - Detailed avoidance checklist
-- `patents/patent-expiry-list.md` - Patent expiration timeline
-- `patents/report-*.md` - Individual investigation reports
+- `patents/README.md` - Entry point and reading guide
+- `patents/summary.md` - Complete investigation summary
+- `patents/avoidance-checklist.md` - Detailed avoidance checklist
+- `patents/expiry-timeline.md` - Patent expiration timeline
+- `patents/reports/` - Individual investigation reports (8 files)
 
 ## Development Phases
 

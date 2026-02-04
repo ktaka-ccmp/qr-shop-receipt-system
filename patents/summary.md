@@ -11,14 +11,14 @@
 
 | 調査領域 | レポート | 状態 |
 |----------|---------|------|
-| 東芝テック特許 | report-toshiba-tec.md | 完了 |
-| freee特許 | report-freee.md | 完了 |
-| POSレジベンダー | report-pos-vendors.md | 完了 |
-| QRコード認証・決済 | report-qrcode.md | 完了 |
-| 電子帳簿保存法関連 | report-e-bookkeeping.md | 完了 |
-| 引用特許ネットワーク | report-citation-network.md | 完了 |
-| 日立グループ | report-hitachi.md | 完了 |
-| 公知例（非特許DB） | report-prior-art-non-patent.md | 完了 |
+| 東芝テック特許 | [reports/toshiba-tec.md](reports/toshiba-tec.md) | 完了 |
+| freee特許 | [reports/freee.md](reports/freee.md) | 完了 |
+| POSレジベンダー | [reports/pos-vendors.md](reports/pos-vendors.md) | 完了 |
+| QRコード認証・決済 | [reports/qrcode.md](reports/qrcode.md) | 完了 |
+| 電子帳簿保存法関連 | [reports/e-bookkeeping.md](reports/e-bookkeeping.md) | 完了 |
+| 引用特許ネットワーク | [reports/citation-network.md](reports/citation-network.md) | 完了 |
+| 日立グループ | [reports/hitachi.md](reports/hitachi.md) | 完了 |
+| 公知例（非特許DB） | [reports/prior-art-non-patent.md](reports/prior-art-non-patent.md) | 完了 |
 
 ### 1.2 調査結論
 
@@ -192,16 +192,16 @@
 
 | ドキュメント | 内容 |
 |-------------|------|
-| [report-toshiba-tec.md](report-toshiba-tec.md) | 東芝テック特許詳細分析 |
-| [report-freee.md](report-freee.md) | freee特許詳細分析 |
-| [report-pos-vendors.md](report-pos-vendors.md) | POSレジベンダー調査 |
-| [report-qrcode.md](report-qrcode.md) | QRコード関連特許調査 |
-| [report-e-bookkeeping.md](report-e-bookkeeping.md) | 電子帳簿保存法関連調査 |
-| [report-citation-network.md](report-citation-network.md) | 引用特許ネットワーク |
-| [report-hitachi.md](report-hitachi.md) | 日立グループ調査 |
-| [report-prior-art-non-patent.md](report-prior-art-non-patent.md) | 公知例調査（非特許DB） |
-| [implementation-avoidance.md](implementation-avoidance.md) | 回避すべき実装一覧 |
-| [patent-expiry-list.md](patent-expiry-list.md) | 特許有効期限一覧 |
+| [avoidance-checklist.md](avoidance-checklist.md) | 回避すべき実装一覧 |
+| [expiry-timeline.md](expiry-timeline.md) | 特許有効期限一覧 |
+| [reports/toshiba-tec.md](reports/toshiba-tec.md) | 東芝テック特許詳細分析 |
+| [reports/freee.md](reports/freee.md) | freee特許詳細分析 |
+| [reports/pos-vendors.md](reports/pos-vendors.md) | POSレジベンダー調査 |
+| [reports/qrcode.md](reports/qrcode.md) | QRコード関連特許調査 |
+| [reports/e-bookkeeping.md](reports/e-bookkeeping.md) | 電子帳簿保存法関連調査 |
+| [reports/citation-network.md](reports/citation-network.md) | 引用特許ネットワーク |
+| [reports/hitachi.md](reports/hitachi.md) | 日立グループ調査 |
+| [reports/prior-art-non-patent.md](reports/prior-art-non-patent.md) | 公知例調査（非特許DB） |
 
 ---
 
