@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Write(patents/**)",
+      "Edit(patents/**)",
+      "Bash(mkdir *)",
+      "Bash(mv *)",
+      "WebFetch(*)",
+      "WebSearch(*)",
+      "Write(.claude/**)"
+    ]
+  }
+}
